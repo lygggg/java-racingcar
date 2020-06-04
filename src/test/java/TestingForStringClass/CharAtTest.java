@@ -2,18 +2,21 @@ package TestingForStringClass;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CharAtTest {
-    @Test
+    @ParameterizedTest
+    @CsvSource(value = {"0:a", "1:b", "2:c"}, delimiter = ':')
     @DisplayName("test charAt() with in of bound")
-    public void charAt() {
+    public void charAt(int input, char expected) {
         String abc = "abc";
-
-        assertThat(abc.charAt(0)).isEqualTo('a');
-        assertThat(abc.charAt(1)).isEqualTo('b');
-        assertThat(abc.charAt(2)).isEqualTo('c');
+        assertEquals(expected, abc.charAt(input));
     }
 
     @Test

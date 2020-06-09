@@ -43,7 +43,7 @@ public class SetCollectionTest {
     @DisplayName("중복된 메소드 제거 테스")
     @ParameterizedTest
     @ValueSource(ints= {1, 2, 3})
-    public void testContaionsTrueTes트t(int number) {
+    public void testContaionsTrueTest(int number) {
         assertTrue(numbers.contains(number));
     }
 

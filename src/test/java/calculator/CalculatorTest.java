@@ -18,6 +18,7 @@ public class CalculatorTest {
     void setUp() {
         calculator = new Calculator();
     }
+
     @DisplayName("계산기")
     @ParameterizedTest
     @CsvSource(value = {"2 + 3 * 4 / 2 :10","1:1", "0 * 10 * 11 + 3 :3"}, delimiter = ':')

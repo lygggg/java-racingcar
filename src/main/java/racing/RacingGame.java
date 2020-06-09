@@ -10,7 +10,7 @@ public class RacingGame {
             InputView inputView = new InputView();
 
 
-            cars.addRacingCar(inputView.askCarCount());
+            cars.addRacingCars(inputView.askCarCount());
 
             int count = inputView.askMoveCount();
 

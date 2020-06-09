@@ -22,16 +22,16 @@ public class RacingGameTest {
     @BeforeEach
     void setUp() {
         racingCars = new RacingCars();
-        car = new RacingCar(0);
+        car = new RacingCar(0,"미정");
     }
 
     @DisplayName("레이싱카 개수를 확인하는 테스트")
-    @ParameterizedTest
-    @ValueSource(ints = {5, 6, 7, 9, 10})
-    public void testCountCarTest(int number) {
-        racingCars.addRacingCar(number);
+    @Test
+    public void testCountCarTest() {
+        String name = "gibong,woomin";
+        racingCars.addRacingCars(name);
         ArrayList<RacingCar> result = racingCars.getCars();
-        assertEquals(number, result.size());
+        assertEquals(name.split(",").length, result.size());
     }
 
     @DisplayName("레이싱카가 제대로 움직이는지 확인하는 테스트")
@@ -45,5 +45,21 @@ public class RacingGameTest {
         assertEquals(2,car.getCount());
     }
 
+
+    @DisplayName("자동차에 이름이 제대로 부여되는지 확인하는 테스트")
+    @ParameterizedTest
+    @CsvSource(value= {"gibong,woomin", "gibong,woomin,gibong,woomin","gibong"})
+    public void testAddCarNameTest(String names) {
+        racingCars.addRacingCars(names);
+        ArrayList<RacingCar> result = racingCars.getCars();
+        assertEquals(names.split(",").length,result.size());
+    }
+
+//    @DisplayName("승자가 누구인지 알아내는 테스트")
+//    @ParameterizedTest
+//    @CsvSource()
+//    public void testWinnerCarTest() {
+//
+//    }
 
 }

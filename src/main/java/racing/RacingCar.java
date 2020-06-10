@@ -2,7 +2,7 @@ package racing;
 
 import java.util.Random;
 
-public class RacingCar {
+public class RacingCar implements Comparable {
     private int count;
     private String  name;
 
@@ -23,5 +23,15 @@ public class RacingCar {
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public int compareTo(Object cars) {
+        RacingCar car = (RacingCar) cars;
+        if (this.count < car.getCount()) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }

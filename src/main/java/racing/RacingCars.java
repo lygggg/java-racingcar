@@ -1,7 +1,8 @@
 package racing;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class RacingCars {
     private ArrayList<RacingCar> cars  = new ArrayList<>();
@@ -19,6 +20,11 @@ public class RacingCars {
         for(RacingCar car : cars) {
             car.move(randomGenerator.get());
         }
+    }
+
+    public ArrayList getWinnerCar() {
+        Collections.sort(cars);
+        return (ArrayList) cars.stream().filter(e-> e.getCount() == cars.get(0).getCount()).collect(Collectors.toList());
     }
 
     public ArrayList<RacingCar> getCars() {return cars;}

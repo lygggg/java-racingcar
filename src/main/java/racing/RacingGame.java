@@ -18,5 +18,6 @@ public class RacingGame {
                 cars.selectMoveCount();
                 ResultView.viewMovingCar(cars.getCars(),i);
             }
+            ResultView.viewWinnerCar(cars.getWinnerCar());
     }
 }

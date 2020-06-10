@@ -14,7 +14,9 @@ public class ResultView {
         System.out.println(count+"회차");
     }
 
-    public static void viewWinnerCar() {
-
+    public static void viewWinnerCar(ArrayList<RacingCar> cars) {
+        for(RacingCar car : cars) {
+            System.out.print(car.getName());
+        }
     }
 }

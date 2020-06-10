@@ -55,11 +55,13 @@ public class RacingGameTest {
         assertEquals(names.split(",").length,result.size());
     }
 
-//    @DisplayName("승자가 누구인지 알아내는 테스트")
+//    @DisplayName("승자가 누구인지 알아내는 테스트") // 도저히...
 //    @ParameterizedTest
-//    @CsvSource()
+//    @CsvSource(value = {"5"})
 //    public void testWinnerCarTest() {
-//
+//        racingCars.addRacingCars("기봉,영규,우민");
+//        ArrayList names = racingCars.getWinnerCar();
+//        assertEquals(names, new );
 //    }
 
 }

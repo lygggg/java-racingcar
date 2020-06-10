@@ -1,6 +1,8 @@
-package racing;
+package racing.controller;
 
-import java.util.Scanner;
+import racing.view.InputView;
+import racing.domain.RacingCars;
+import racing.view.ResultView;
 
 public class RacingGame {
     final static private RacingCars cars = new RacingCars();
@@ -8,7 +10,6 @@ public class RacingGame {
     public static void main(String[] args) {
 
             InputView inputView = new InputView();
-
 
             cars.addRacingCars(inputView.askCarCount());
 

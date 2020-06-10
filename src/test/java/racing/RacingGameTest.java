@@ -1,12 +1,12 @@
 package racing;
 
-import org.assertj.core.internal.bytebuddy.build.ToStringPlugin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import racing.domain.RacingCar;
+import racing.domain.RacingCars;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,6 @@ public class RacingGameTest {
     @BeforeEach
     void setUp() {
         racingCars = new RacingCars();
-        car = new RacingCar(0,"미정");
     }
 
     @DisplayName("레이싱카 개수를 확인하는 테스트")
@@ -37,6 +36,7 @@ public class RacingGameTest {
     @DisplayName("레이싱카가 제대로 움직이는지 확인하는 테스트")
     @Test
     public void testMoveTest() {
+        car = new RacingCar(0,"미정");
         car.move(6);
         assertEquals(1,car.getCount());
         car.move(7);

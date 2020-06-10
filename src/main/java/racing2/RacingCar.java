@@ -1,10 +1,8 @@
-package racing;
+package racing2;
 
-import java.util.Random;
-
-public class RacingCar implements Comparable {
+public class RacingCar implements Comparable{
     private int count;
-    private String  name;
+    private String name;
 
     public RacingCar(int count, String name) {
         this.count = count;
@@ -12,9 +10,9 @@ public class RacingCar implements Comparable {
     }
 
     public void move(int count) {
-            if (count >= 4) {
-                this.count +=1;
-            }
+        if (count >= 4) {
+            this.count +=1;
+        }
     }
 
     public int getCount() {
@@ -28,10 +26,11 @@ public class RacingCar implements Comparable {
     @Override
     public int compareTo(Object cars) {
         RacingCar car = (RacingCar) cars;
-        if (this.count < car.getCount()) {
-            return 1;
-        } else {
-            return -1;
+        if(this.count < car.getCount()) {
+            return  1;
+        }
+        else {
+            return 0;
         }
     }
 }
